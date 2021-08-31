@@ -1,0 +1,78 @@
+@import "../../global.scss";
+.half {
+  display: flex;
+}
+.half > img {
+  width: 65%;
+  object-fit: contain;
+  @include mobile {
+    display: none;
+  }
+}
+
+.avatars {
+  overflow: hidden;
+  background-color: $background;
+  padding-top: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $mainColor;
+  @include mobile {
+    padding-top: 0;
+  }
+
+  h1 {
+    font-size: 60px;
+    color: rgb(141, 56, 190);
+
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    @include mobile {
+      font-size: 20px;
+      padding-bottom: 20px;
+    }
+  }
+}
+.container__avatars {
+  z-index: 1;
+  padding-top: 40%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+.container__two {
+  padding-left: 30px;
+  overflow: hidden;
+
+  max-width: 430px;
+  @include mobile {
+    display: none;
+  }
+}
+
+.skills {
+  color: $mainColor;
+  background-color: $background;
+  border-radius: 10%;
+  transform: skew(-10deg);
+  margin: 10px;
+  padding-bottom: 10px;
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+  align-items: center;
+  h1 {
+    text-align: center;
+    font-size: 30px;
+    color: $hover;
+    text-shadow: 1px 0px 2px rgba(150, 150, 150, 1);
+  }
+}

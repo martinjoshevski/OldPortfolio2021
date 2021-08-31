@@ -1,0 +1,21 @@
+@import "../../global.scss";
+.education {
+  padding: 100px 150px;
+  display: flex;
+  overflow: hidden;
+  @include mobile {
+    padding: 100px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.education > img {
+  width: 65%;
+  object-fit: contain;
+  @include mobile {
+    display: none;
+  }
+}
+.first__education {
+  padding-top: 10%;
+}

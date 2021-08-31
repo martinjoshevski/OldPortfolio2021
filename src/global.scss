@@ -1,0 +1,12 @@
+$mainColor: #382961;
+
+$background: #ffffff;
+$text: #e4b363;
+$width: 768px;
+$hover: #7edbff;
+
+@mixin mobile {
+  @media (max-width: #{$width}) {
+    @content;
+  }
+}

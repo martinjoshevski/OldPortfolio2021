@@ -1,0 +1,140 @@
+@import "../../global.scss";
+.half {
+  display: flex;
+}
+.half > img {
+  width: 60%;
+  object-fit: contain;
+  @include mobile {
+    display: none;
+  }
+}
+.portfolio {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    157deg,
+    rgba(2, 0, 36, 1) 6%,
+    rgba(82, 82, 124, 1) 15%,
+    rgba(0, 212, 255, 1) 50%
+  );
+  display: flex;
+  width: 1000px;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 250px;
+  // padding-left: 10%;
+  color: $text;
+  @include mobile {
+    width: 300px;
+    padding-top: 0;
+  }
+  h1 {
+    // padding-top: 50px;
+    font-size: 60px;
+    color: rgb(141, 56, 190);
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    @include mobile {
+      font-size: 50px;
+      padding-bottom: 20px;
+    }
+  }
+
+  ul {
+    margin: 10px;
+    list-style: none;
+    display: flex;
+
+    @include mobile {
+      margin: 10px 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  .container {
+    padding-top: 10px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    transition: all 0.75s;
+
+    .item {
+      width: 330px;
+      height: 330px;
+      border-radius: 20px;
+      box-shadow: 2px 1px 44px -22px rgba(13, 56, 244, 0.69);
+      -webkit-box-shadow: 2px 1px 44px -22px rgba(13, 56, 244, 0.69);
+      -moz-box-shadow: 2px 1px 44px -22px rgba(13, 56, 244, 0.69);
+      margin: 20px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      color: white;
+      position: relative;
+      transition: all 0.5s ease;
+      cursor: pointer;
+      overflow: hidden;
+      @include mobile {
+        width: 160px;
+        height: 160px;
+      }
+
+      h3 {
+        width: 260px;
+        padding-left: 30px;
+        position: absolute;
+        text-align: justify;
+        font-size: 20px;
+        @include mobile {
+          font-size: 15px;
+          text-align: center;
+          max-width: 120px;
+          padding-left: 0;
+        }
+      }
+
+      a {
+        border-radius: 15px;
+        background-color: $background;
+        padding: 0 10px;
+        color: $mainColor;
+        text-decoration: none;
+        background: {
+          image: linear-gradient(45deg, $hover 50%, transparent 50%);
+          position: 100%;
+          size: 300%;
+        }
+        transition: background 300ms ease-in-out;
+
+        &:hover {
+          background-position: 0;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        transition: all 0.75s;
+      }
+
+      &:hover {
+        background-color: #000;
+
+        // overflow: hidden;
+
+        img {
+          opacity: 0.05;
+          z-index: 0;
+          width: 111%;
+          height: 111%;
+        }
+      }
+    }
+  }
+}

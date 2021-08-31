@@ -1,0 +1,114 @@
+@import "../../global.scss";
+
+.menu {
+  width: 330px;
+  height: 100vh;
+
+  position: fixed;
+  left: 0;
+  left: -300px;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease;
+
+  &.active {
+    left: 0;
+  }
+  @include mobile {
+    display: none;
+  }
+  ul {
+    align-items: center;
+    margin: 0;
+    padding-bottom: 150px;
+    padding-right: 25px;
+    list-style: none;
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
+    width: 60%;
+
+    li {
+      margin: 5px;
+      a {
+        font-size: 26px;
+        font-weight: 700;
+        color: $mainColor;
+        text-decoration: none;
+        letter-spacing: 0.1em;
+      }
+
+      .btn-draw {
+        position: relative;
+        display: inline-block;
+        color: $mainColor;
+        border-bottom: 3px solid $mainColor;
+        cursor: pointer;
+        overflow: hidden;
+        transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+      }
+      .btn-draw:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 1px;
+        background: $mainColor;
+        transform: translateY(100%);
+        transition: transform 0.1s ease-in-out;
+        transition-delay: 0.1s;
+      }
+      .btn-draw > span {
+        position: relative;
+        display: block;
+        padding: 0.5em;
+        color: inherit;
+      }
+      .btn-draw > span:before,
+      .btn-draw > span:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: $mainColor;
+        // transition: transform 0.1s ease-in-out;
+      }
+      .btn-draw > span:before {
+        height: 1px;
+        width: 100%;
+        transform: translateX(100%);
+        transition-delay: 0.1s;
+      }
+      .btn-draw > span:after {
+        height: 100%;
+        width: 1px;
+        transform: translateY(-100%);
+        transition-delay: 0.1s;
+      }
+      .btn-draw:hover:after,
+      .btn-draw:hover > span:before,
+      .btn-draw:hover > span:after {
+        transform: translate(0, 0);
+      }
+      .btn-draw:hover:after {
+        transition-delay: 0s;
+      }
+      .btn-draw:hover > span:before {
+        transition-delay: 0.1s;
+      }
+      .btn-draw:hover > span:after {
+        transition-delay: 0.1s;
+      }
+      .btn-draw:hover {
+        color: $mainColor;
+        background-color: $hover;
+
+        transition-delay: 0.1s;
+      }
+    }
+  }
+}
